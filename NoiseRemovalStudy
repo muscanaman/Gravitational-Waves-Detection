@@ -1,0 +1,14 @@
+import numpy as np
+fs, T = 512, 64
+t = np.arange(0, T, 1/fs); rng = np.random.default_rng(0)
+p = np.cos(2*np.pi*60*t)          # witness 1: power-line monitor
+a = np.cos(2*np.pi*0.5*t)         # witness 2: alignment (ASC) wobble
+h = p + 0.8*p*a + 0.3*rng.standard_normal(t.size)   # strain (no GW)
+
+def clean(features):
+    F = np.column_stack(features)
+    c, *_ = np.linalg.lstsq(F, h, rcond=None)       # least squares, §1.4
+    return c, np.var(h - F @ c)
+
+print(clean([p, a]))        # linear only
+print(clean([p, a, p*a]))   # with the product feature
