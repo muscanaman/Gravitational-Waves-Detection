@@ -1,0 +1,8 @@
+data/*
+!data/.gitkeep
+*.pth
+*.pt
+*.npy
+*.npz
+__pycache__/
+.ipynb_checkpoints/
