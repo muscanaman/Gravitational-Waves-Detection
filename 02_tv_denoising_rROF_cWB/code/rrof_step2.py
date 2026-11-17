@@ -1,6 +1,16 @@
-## Step 2.1: create the clean signal and the noisy data
+"""
+Step 2: classical smoothness (Tikhonov) denoising of a noisy 1-D box signal.
+
+Minimises  J(u) = ||D u||^2 + (lambda/2) ||u - f||^2,  whose solution is
+u = (I + (2/lambda) D^T D)^{-1} f.   Shows the bias-variance trade-off in lambda
+and that the filter is a low-pass (it blurs sharp edges).
+Run:  python rrof_step2.py   (saves ../figures/step2_smoothing.png)
+"""
+import os
 import numpy as np
 import matplotlib.pyplot as plt
+
+## Step 2.1: create the clean signal and the noisy data
 
 rng = np.random.default_rng(0)
 N = 400
@@ -16,7 +26,7 @@ plt.plot(t, f, lw=0.6, color="gray", label="data f = u + n")
 plt.plot(t, u_true, "k", lw=1.5, label="true u")
 plt.legend(); plt.show()
 
-## Step 2.2: build the “neighbor jump” tool $D$ and see what it measures.
+## Step 2.2: build the "neighbor jump" matrix D and see what it measures
 
 D = np.zeros((N - 1, N))
 for i in range(N - 1):
@@ -30,6 +40,7 @@ print("positions where the true box jumps:", np.nonzero(jumps_true)[0], " values
 print("R(u_true) = ||D u_true||^2 =", np.sum(jumps_true**2))
 print("R(f)      = ||D f||^2      =", np.sum((D @ f)**2))
 
+## Step 2.3: solve the smoothing problem for several lambda
 DtD = D.T @ D
 
 def smooth(f, lam):
@@ -40,8 +51,8 @@ print("RMSE of raw data f:", np.sqrt(np.mean((f - u_true)**2)))
 for lam in [0.01, 0.1, 0.5, 1, 5, 20, 100, 1000]:
     u = smooth(f, lam)
     print(f"lambda = {lam:7.2f}   RMSE = {np.sqrt(np.mean((u - u_true)**2)):.3f}")
-    import os
 
+## Step 2.4: plot the denoised signals and the filter gain
 fig, ax = plt.subplots(1, 2, figsize=(13, 4))
 ax[0].plot(t, f, lw=0.5, color="gray", label="data f")
 ax[0].plot(t, u_true, "k", lw=1.5, label="true u")
