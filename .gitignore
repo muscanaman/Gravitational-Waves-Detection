@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Large data and model files (each study keeps its own data folder out of git)
+*.npy
+*.npz
+*.pt
+*.pth
+*.h5
+*.hdf5
+
+# Editors and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
