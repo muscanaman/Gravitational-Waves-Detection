@@ -78,4 +78,4 @@ Study 03 will have its own requirements when its code is added. Each study's REA
 
 ## Author
 
-**Muskan Aman Khan**: electrical engineering graduate (Namal University), focused on the mathematics of machine learning and its application to gravitational-wave data analysis.
+**Muskan Aman Khan**: Electrical Engineering graduate and RA at LUMS, Pakistan, focused on the mathematics of machine learning and its application to gravitational-wave data analysis.
