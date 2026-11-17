@@ -26,7 +26,8 @@ and explains the decisions with Score-CAM saliency maps and UMAP feature-space p
         data/       Gravity Spy data (not committed, see .gitignore)
 
 ## Status
-- [ ] Notes
+- [x] Scaffold and paper PDF
+- [ ] Notes: written through the UMAP cost function (Eq. 7); remaining: Eq. 8, results and evaluation, gaps
 - [ ] Data download and inspection
 - [ ] CNN training and evaluation
 - [ ] Score-CAM
