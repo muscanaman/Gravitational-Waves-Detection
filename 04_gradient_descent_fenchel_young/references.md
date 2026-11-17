@@ -18,3 +18,12 @@
    [PDF](https://cs.nyu.edu/~mohri/pub/pmb.pdf) — reproduces both the Novikoff
    (1962) and Freund & Schapire (1999) proofs in full, modern notation; used as
    the primary source for the hand-derivations in this repository.
+## Source papers (not redistributed in this repository)
+
+- Bao, H., Sakaue, S., Takezawa, Y. *Any-stepsize Gradient Descent for Separable Data under
+  Fenchel-Young Losses.* NeurIPS 2025 (spotlight). arXiv:2502.04889 (v2, 11 Oct 2025).
+  https://arxiv.org/abs/2502.04889
+- Mohri, M., Rostamizadeh, A. *Perceptron Mistake Bounds.* arXiv:1305.0208 (2013).
+  https://arxiv.org/abs/1305.0208
+- Freund, Y., Schapire, R. E. *Large Margin Classification Using the Perceptron Algorithm.*
+  Machine Learning, 1999. (Publisher page not linked here; check volume and pages when citing.)

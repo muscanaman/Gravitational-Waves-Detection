@@ -47,7 +47,7 @@ This study analyses that behaviour in a setting where it can be proved:
 |---|---|
 | `notes/02_FY_Loss_GD_Notes_v2.docx` | Hand derivation notes: gradient descent, softmax and the Fenchel-Young framework |
 | `notes/03_GD_FYLoss_FreundSchapire_Extension.docx` | The proposed Cesaro-margin relaxation, compared with Freund & Schapire |
-| `papers/` | Bao et al. 2025 (primary source); Freund & Schapire 1999; Mohri & Rostamizadeh perceptron survey |
+| `papers/` (local only, not committed) | Personal copies of the three source papers; links and citations are in `references.md` |
 | `references.md` | Full reference list |
 | `code/`, `figures/` | Numerical experiments (planned, see below) |
 
